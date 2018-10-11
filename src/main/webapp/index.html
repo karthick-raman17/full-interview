@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Interview Scheduling</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+	<link rel="icon" type="image/png" href="assets/img/favicon.png" />
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css" href="assets/css/roboto-font-googleapis-com.min.css"/>
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+
+	<!-- CSS Files -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/css/material-bootstrap-wizard.min.css" rel="stylesheet" />
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link href="assets/css/demo.min.css" rel="stylesheet" />
+	<link href="assets/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+	<link href="assets/css/intlTelInput.css" rel="stylesheet"/>
+	<style>
+	 
+#testID{
+	float: left;
+}
+
+.generated-slots {
+	position: relative;
+    right: 17px;
+    height: 300px; 
+    -webkit-column-count: 5;
+       -moz-column-count: 5;
+            column-count: 5; 
+}
+
+.generated-slots li {
+	
+	display: inline-block;
+	background-color: #00bcd4;
+    color: white;
+	padding: 3px;
+    margin: 5px;
+    border-radius: 3px;
+    width: 85%;
+	text-align: center;
+	transition: all .2s ease-in-out;
+}
+.generated-slots li:hover{
+	background-color: #040F16;
+	cursor: pointer;
+	transform: scale(1.2);
+}
+
+	</style> 
+</head>
+
+<body>
+	<div class="image-container set-full-height" style="background-image: url('assets/img/wizard-book.jpg')">
+	    <!--   Big container   -->
+	    <div class="container">
+	        <div class="row">
+		        <div class="col-sm-8 col-sm-offset-2">
+		            <!--      Wizard container        -->
+		            <div class="wizard-container">
+		                <div class="card wizard-card" data-color="blue" id="wizard"><form>
+		                	<div class="wizard-header">
+		                        	<h3 class="wizard-title">
+		                        		Schedule Your Interview
+		                        	</h3>
+									<!-- <h5>This information will let us know more about you.</h5> -->
+		                    	</div>
+								<div class="wizard-navigation">
+									<ul>
+			                           
+										<li><a href="#stafflist" data-toggle="tab">SCHEDULE WITH</a></li>
+										<li><a href="#timeslots" data-toggle="tab">SELECT YOUR TIME</a></li>
+										<li><a href="#details" data-toggle="tab">YOUR INFO</a></li>
+			                           
+			                        </ul>
+								</div>
+
+		                        <div class="tab-content">
+										<div class="tab-pane" id="stafflist">
+												<h4 class="info-text"> </h4>
+												<div class="row">
+													<div class="col-sm-10 col-sm-offset-1 staff-list">												
+															
+														
+														<!-- Staff List -->
+													
+													</div>
+												</div>
+											</div>
+									
+									<div class="tab-pane" id="timeslots">
+											<div class="row">
+												<div class="col-sm-4 .col-md-6 col-sm-offset-1 col-xs-12">
+													<div class="form-group">
+														<!-- Date picker -->
+															<div id="testID"></div>
+													</div>
+												</div>
+											
+
+												<div class="col-sm-6 .col-md-6 col-xs-12">
+													<div class="form-group">
+
+														<!-- Show slots -->
+														 <div class="available-slots"></div>
+														
+													</div>
+												</div>  										
+											</div>
+										</div>
+	
+									<div class="tab-pane" id="details">
+		                            	<div class="row">
+			                            	<div class="col-sm-12">
+			                                	<h4 class="info-text"></h4>
+											</div>
+											
+		                                	<div class="col-sm-6">
+													<div class="input-group">
+															<span class="input-group-addon">
+																<i class="material-icons">account_box</i>
+															</span>
+															<div class="form-group label-floating">
+																  <label class="control-label active">Name</label>
+																  <input id="employeeName" name="name" type="text" class="form-control" autocomplete="off">
+															</div>
+														</div>
+
+												<div class="input-group">
+													<span class="input-group-addon">
+														<i class="material-icons">email</i>
+													</span>
+													<div class="form-group label-floating">
+			                                          	<label class="control-label active">Your Email</label>
+			                                          	<input id="employeeEmail" name="email" type="email" class="form-control">
+			                                        </div>
+												</div>
+
+												
+
+		                                	</div>
+		                                	<div class="col-sm-6">
+											<div class="input-group">
+													<span class="input-group-addon">
+															<i class="material-icons">call</i>
+														</span>
+		                                    	<div class="form-group label-floating">
+		                                        	<!-- <label class="control-label active">Phone</label> -->
+													<input placeholder="Phone" id="employeePhone" name="phone" type="tel" class="form-control" autocomplete="off">
+												</div>
+												</div>
+		                                	</div>
+		                            	</div>
+									</div>
+									
+									
+
+		                        </div>
+	                        	<div class="wizard-footer">
+	                            	<div class="pull-right">
+	                            	     <input type='button' class='btn btn-finish btn-fill btn-danger btn-wd go-first' name='next' value='Cancel' />
+	                                    <input type='button' id="scheduleAppt" class='btn btn-finish btn-fill btn-info btn-wd' name='finish' value='Schedule Now' />
+									</div>
+									
+	                                <div class="clearfix"></div>
+	                        	</div>
+		                    </form>
+		                </div>
+		            </div> <!-- wizard container -->
+		        </div>
+	    	</div> <!-- row -->
+		</div> <!--  big container -->
+	</div>
+
+
+	
+	<!-- The Modal -->
+		<div class="modal" id="successModal">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <!-- Modal body -->
+			  <div class="modal-body">
+				<h4 class="modal-title text-center">Appointment Created!!!</h4>
+			  </div>
+			  <div class="text-center">
+				<button type="button" class="btn btn-info go-first"  data-dismiss="modal">OK</button>
+			  </div>
+			  
+			</div>
+		  </div>
+		</div>
+</body>
+
+
+<!-- Template -->
+<script id="entry-template" type="text/x-handlebars-template">
+		<div class="col-sm-6">
+			  <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="{{about}}">
+				  <input type="radio" id={{id}} name="staff" value={{id}}>										
+				  <img src={{url}}  class="img-circle" alt="Staff Picture" width="100" height="100" >													
+					  <h6>{{firstName}} {{lastName}}</h6>
+			  </div>
+		  </div>
+	
+	  </script>
+<script id="slot-template" type="text/x-handlebars-template">
+	  <ul class="generated-slots">
+			{{#each this }}
+    <li class="time-slots">{{ this }}</li>
+			{{/each}}
+		  </ul>
+</script>
+	<!--   Core JS Files   -->
+	<script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/jquery.bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/material-bootstrap-wizard.min.js"></script>
+	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/handlebars-4.0.11.min.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap-datepicker-v1.4.1.min.js"></script>
+	<script src="assets/js/intlTelInput.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+	<script src="assets/js/index.js"></script>
+</html>
